@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" media="screen and (min-width: 800px)" href="../css/desktop.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <link rel="shortcut icon" href="../sources/img/icon--math-min.png">
+    <link rel="stylesheet" href="../css/geometric.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Geometric caculator | Cuadrado</title>
+</head>
+<body>
+    <header class="header">
+        <div id="sidebar" class="header__side-bar">
+            <div class="side-bar__toggle-btn">
+                <span class="side-bar__toggle-btn--span">&#9776</span>
+            </div>
+            <ul class="side-bar_listas">
+                <li class="listas_li"><a href="../index.html"><img src="../sources/img/icon--math-min.png" alt="" class="listas_li--img"></a></li>
+                <li class="listas_li"><a class="listas__li--a" href="../index.html">Main page</a>
+                </li>
+                <li class="listas_li"><a class="listas__li--a" href="../pages/triangulo.html">Triángulo isósceles</a></li>
+                <li class="listas_li"><a class="listas__li--a" href="../pages/circulo.html">Círculo</a></li>
+                <li class="listas_li"><a class="listas__li--a" href="./cuadro.html">Cuadrado</a></li>
+            </ul>
+        </div>
+        <div class="header__container--logo">
+            <img class="header--img" src="../sources/img/mat--icon-min.png" alt="">
+            <h1 class="header--h1">
+                Gemotric <br> Calculator
+            </h1>
+        </div>
+    </header>
+    <main class="main">
+        <h3 class="main--title">Cuadrado</h3>
+        <div class="main__descripcion">
+            <img src="../sources/img/cuadrado-lado-vertice-min.png" alt="" class="main__descripcion--img">
+            <div class="descripcion__text">
+                <p class="descripcion__text--p">Esta calculadora te ayudaremos a encontrar el área y el perímetro de un cuadrado, además a esto en el
+                siguiente parrafo puedes ver cuáles fueron las formulas usadas para poder hallar estas medidas</p>
+                <p class="descripcion__text--p">Las fórmulas son las siguientes
+                <ul style="list-style: none;">
+                    <li style="color: rgb(76, 0, 255);">Perimetro: Lado<strong style="color: red;">x</strong>Lado</li>
+                    <li style="color: rgb(76, 0, 255);">Área: Lado²</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="main__pregunta">
+            <label for="InputDatos" class="main__pregunta--label">
+                ¿Cuanto mide el lado de tu cuadrado en <strong style="color: red;">cm</strong> ?
+            </label>
+            <input type="number" name="" id="InputDatos" class="main__pregunta--dato-numerico">
+        </div>
+        <form action="" class="main__formulario">
+            <button type="button" onclick="calcularPerimetroCuadrado()" class="main__formulario--button">Perimetro</button>
+            <button type="button" onclick="calcularAreaCuadrado()" class="main__formulario--button">Área</button>
+            <input type="text" class="main__formulario--input" id="inputPerimetro" readonly>
+            <input type="text" class="main__formulario--input" id="inputArea" readonly>
+        </form>
+
+    </main>
+    <script src="../js/side_bar.js"></script>
+    <script>
+        const perimetro_cuadrado = lado_cadrado => lado_cadrado * 4; // perimetro
+            const area_cuadrado = lado_cuadrado => lado_cuadrado ** 2; // área
+
+            function calcularPerimetroCuadrado() { // Cuadrado calculadora perimetro
+                const input = document.getElementById("InputDatos");
+                const value = input.value;
+                const perimetro = perimetro_cuadrado(value);
+                document.getElementById("inputPerimetro").value = `${perimetro} cm`;
+            }
+            function calcularAreaCuadrado() { // Cuadrado calculadora área
+                const input = document.getElementById("InputDatos");
+                const value = input.value;
+                const area = area_cuadrado(value);
+                document.getElementById("inputArea").value = `${area} cm²`;
+            }
+    </script>
+</body>
+</html>

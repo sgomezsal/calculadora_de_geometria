@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" media="screen and (min-width: 800px)" href="../css/desktop.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <link rel="shortcut icon" href="../sources/img/icon--math-min.png">
+    <link rel="stylesheet" href="../css/geometric.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Geometric caculator | Circulo</title>
+</head>
+
+<body>
+    <header class="header">
+        <div id="sidebar" class="header__side-bar">
+            <div class="side-bar__toggle-btn">
+                <span class="side-bar__toggle-btn--span">&#9776</span>
+            </div>
+            <ul class="side-bar_listas">
+                <li class="listas_li"><a href="../index.html"><img src="../sources/img/icon--math-min.png" alt="" class="listas_li--img"></a></li>
+                <li class="listas_li"><a class="listas__li--a" href="../index.html">Main page</a>
+                </li>
+                <li class="listas_li"><a class="listas__li--a" href="./triangulo.html">Triángulo isósceles</a></li>
+                <li class="listas_li"><a class="listas__li--a" href="./circulo.html">Círculo</a></li>
+                <li class="listas_li"><a class="listas__li--a" href="./cuadro.html">Cuadrado</a></li>
+            </ul>
+        </div>
+        <div class="header__container--logo">
+            <img class="header--img" src="../sources/img/mat--icon-min.png" alt="">
+            <h1 class="header--h1">
+                Gemotric <br> Calculator
+            </h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <h3 class="main--title">Círculo</h3>
+        <div class="main__descripcion">
+            <img src="../sources/img/circulo-radio-min.png" alt="" class="main__descripcion--img">
+            <div class="descripcion__text">
+                <p class="descripcion__text--p">Esta calculadora te ayudaremos a encontrar el área y el perímetro de un círculo,
+                    además a esto en el
+                    siguiente parrafo puedes ver cuáles fueron las formulas usadas para poder hallar estas medidas</p>
+                <p class="descripcion__text--p">Las fórmulas son las siguientes
+                <ul style="list-style: none;">
+                    <li style="color: rgb(76, 0, 255);">Perimetro: Diámetro * π</li>
+                    <li style="color: rgb(76, 0, 255);">Área: Radio² * π</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="main__pregunta">
+            <label for="InputDatos" class="main__pregunta--label">
+                ¿Cuanto mide el radio de tu círculo en <strong style="color: red;">cm</strong> ?
+            </label>
+            <input type="number" name="" id="InputDatos" class="main__pregunta--dato-numerico">
+        </div>
+        <form action="" class="main__formulario">
+            <button type="button" onclick="calcularPerimetroCirculo()"
+                class="main__formulario--button">Perimetro</button>
+            <button type="button" onclick="calcularAreaCirculo()" class="main__formulario--button">Área</button>
+            <input type="text" class="main__formulario--input" id="inputPerimetro" readonly>
+            <input type="text" class="main__formulario--input" id="inputArea" readonly>
+        </form>
+
+    </main>
+    <script src="../js/side_bar.js"></script>
+    <script>
+        // Circulo
+            const perimetro_circulo = radio => (radio * 2) * Math.PI; // perimetro
+            const area_circulo = radio => (radio * radio) * Math.PI; // área
+
+            function calcularPerimetroCirculo() { // Circulo calculadora perimetro
+                const input = document.getElementById("InputDatos");
+                const value = input.value;
+                const perimetro = perimetro_circulo(value);
+                document.getElementById("inputPerimetro").value = `${perimetro.toFixed(2)} cm`;
+            }
+            function calcularAreaCirculo() { // Circulo calculadora área
+                const input = document.getElementById("InputDatos");
+                const value = input.value;
+                const area = area_circulo(value);
+                document.getElementById("inputArea").value = `${area.toFixed(2)} cm²`;
+            }
+    </script>
+</body>
+
+</html>

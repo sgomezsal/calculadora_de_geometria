@@ -1,0 +1,81 @@
+.main--title {
+    padding: 1rem;
+    font-size: 2rem;
+    text-decoration: underline white;
+}
+.main__descripcion--img {
+    width: 50vw;
+    order: 2;
+    margin-bottom: 1rem;
+}
+.main__descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.descripcion__text {
+    padding: 1rem;
+    font-size: 1.5rem;
+    order: 1;
+}
+.main__pregunta {
+    display: grid;
+}
+.main__pregunta--label {
+    font-size: 1.5rem;
+    text-align: center;
+}
+.main__pregunta--dato-numerico {
+    margin: 1rem 0;
+    height: 2.5rem;
+    align-self: center;
+    justify-self: center;
+    width: 20rem;
+    border: solid 0.1rem rgba(255, 255, 255, 0.37);
+    outline: none;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.493);
+    text-align: center;
+}
+.main__formulario {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 1rem;
+}
+.main__formulario input, .main__formulario button {
+    width: 98%;
+    align-self: center;
+    justify-self: center;
+    margin: 0.2rem 0;
+    outline: none;
+    text-align: center;
+    color: white;
+}
+.main__formulario--button {
+    height: 3.5rem;
+    background-color: var(--color-fondo);
+    border: solid rgba(255, 255, 255, 0.308) 0.1rem;
+}
+.main__formulario--input {
+    height: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.295);
+    border: solid rgba(255, 255, 255, 0.308) 0.1rem;
+    padding: 1rem;
+}
+.footer {
+    margin-top: 5rem;
+    background-color: white;
+}
+.nav_listas {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.nav_listas .listas__li--a {
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+.nav_listas .listas_li {
+    margin: 1.5rem 0;
+}
